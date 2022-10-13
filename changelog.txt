@@ -1,0 +1,77 @@
+testProj Change Log
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+2022-10-13-1.4.1
+		// Adjusted sale price of resources
+		// Prepared package for GitHub deposit 
+
+2022-09-01-1.4
+		// Corrected population payment miscaluclation
+		// Added Guild
+		// Fixed bug when collecting town resources
+		// Buffed Mun rewards
+		// If population does not find a resource, costs 10 instead of 100
+		// MASSIVE improvement to resource collection to take less time
+
+2022-08-18-1.3.2
+		// More formatting!
+		// Fixed a major error when checking for facilities
+
+2022-08-18-1.3.1
+		// Forge bonus adds to level
+		// Formatting in forge rewards
+		// Corrected stat display in level up menu
+		// Formatting in resource rewards
+		// Resource sell price fluctuates
+		// Corrected metal sale price
+		// Added visual element for price fluctutations
+		// Fixed issue with Alchemist and Forge not upgrading stats and level
+		// Game balance changes
+		// Fixed forge process overleveling
+		// Fixed resource collection when buildings over level 100
+		// Added percent display to hunt menu and redid difficulty calculation
+		// Finally squashed Max Stat cost from line one 1.2 release notes
+
+2022-08-15-1.3
+		// Added Forge
+		// Corrected some formatting errors
+		// Change Blacksmith upgrade to say Blacksmith, not Mines
+		// Misc. other fixes here and there
+
+2022-08-12-1.2.2
+		// Changed super hunt clear
+		// Changed super hunt timer
+		// Fixed crash in population menu
+		// Formatting changes in alchemy lab display
+		// Formatting on all numbers to add commas
+
+2022-08-05-1.2.1
+		// Corrected diplay text on alchemy menu
+		// Fixed potion set up, brewing, and consumption
+		// Reduced population cost to 10 per search
+		// Extended space main and hunt menu for more numbers and cleaner appearance
+		// Fixed data pointer on inviting the alchemist
+		// Enacted minimum level of 200 for super hunting
+		// Enacted minimum level of 1000 for town management
+		// Enacted max hunt reptition of 1000
+
+2022-08-03-1.2
+		// Working on correcting Max Stat cost and removing proper amount of exp
+		// I fixed something else here but the changelog got overwritten
+		// Fixed Max Stat return in Shop
+		// Updated some info in the README.txt file for clarification.
+		// Population now needs to be paid for their work at 100 Muns per person
+		// Player is alerted when coffers are empty
+		// Alchemist added to town
+		// Set up town for further expansion
+2022-08-01-1.1
+		// Added variable spacing for town management to allow for levels over 9
+		// Corrected resource gathering to allow for all resources to be collected
+		// Corrected resource gathering to correctly count gained resources
+		// Fixed the rare bug if player power and rank power are equal that there is
+		   a 100% chance
+		// Cleaned up some unused code
+		// Removed Herobrine(?)
+
+2022-07-29-1.0
+		// Initial distribution. Expect bugs.
