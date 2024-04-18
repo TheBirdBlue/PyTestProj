@@ -2,10 +2,11 @@
 
 import os
 import sys
+import time
 
+# Import Folder
 sys.path.insert(0, './func_modules')
 
-import time
 import hunt
 import levelup
 import shop

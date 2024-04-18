@@ -85,12 +85,12 @@ def specialShop(importList):
 
     # Set price variables for selling resources
     woodVariable = random.randrange(-5, 6)
-    oreVariable = random.randrange(-250, 251)
-    metalVariable = random.randrange(-500, 501)
+    oreVariable = random.randrange(-50, 51)
+    metalVariable = random.randrange(-125, 126)
 
     # Set growth symbols
     infoVariable = [woodVariable, oreVariable, metalVariable]
-    infoPrice = [10, 500, 1000]
+    infoPrice = [10, 100, 250]
     symbol = []
 
     # Set symbols for lists for selling resources

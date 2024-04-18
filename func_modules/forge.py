@@ -78,7 +78,7 @@ def forgeSmithing(repeat):
     # Set names to list on load
     baseList = [resourceList[0], resourceList[1]]
     progressList = [resourceList[2], resourceList[3]]
-    chanceTable = [5, 20]
+    chanceTable = [5, 9]
     resourcePointer = 2
 
     if baseList[0] > 0 and baseList[1] > 0:
@@ -108,7 +108,7 @@ def forgeFire(ore, metal, oreBase, metalBase, oreProgress, metalProgress, itemCh
     weaponMenu = ['Dagger', 'Short Sword', 'Long Sword', 'War Hammer', 'Enchantment Rune']
     armorMenu = ['Hand Guard', 'Helmet', 'Sturdy Brace', 'Tower Shield', 'Reinforced Plates']
     choiceMenu = []
-    rewardMenuStat = [50, 50, 150, 150, 400, 400, 1000, 1000, 2500, 2500]
+    rewardMenuStat = [100, 100, 250, 250, 550, 550, 1200, 1200, 2800, 2800]
     rewardMenuMuns = [100000, 100000, 300000, 300000, 800000, 800000, 2500000, 2500000, 10000000, 10000000]
 
     for weapon, armor in zip(weaponMenu, armorMenu):

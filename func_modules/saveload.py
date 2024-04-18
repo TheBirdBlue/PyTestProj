@@ -67,4 +67,3 @@ def saveOver(file, charList):
             str(line).rstrip('\n')
             save.write(str(line))
             save.write('\n')
-

@@ -1,12 +1,16 @@
 testProj Change Log
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+2023-08-03-1.5
+		// Added "Running Hunt" to hunt menu
+		// Small enhancements to functions
+
 2022-10-13-1.4.1
 		// Adjusted sale price of resources
 		// Prepared package for GitHub deposit 
 
 2022-09-01-1.4
-		// Corrected population payment miscaluclation
+		// Corrected population payment miscalculation
 		// Added Guild
 		// Fixed bug when collecting town resources
 		// Buffed Mun rewards
@@ -24,10 +28,10 @@ testProj Change Log
 		// Formatting in resource rewards
 		// Resource sell price fluctuates
 		// Corrected metal sale price
-		// Added visual element for price fluctutations
+		// Added visual element for price fluctuations
 		// Fixed issue with Alchemist and Forge not upgrading stats and level
 		// Game balance changes
-		// Fixed forge process overleveling
+		// Fixed forge process over-leveling
 		// Fixed resource collection when buildings over level 100
 		// Added percent display to hunt menu and redid difficulty calculation
 		// Finally squashed Max Stat cost from line one 1.2 release notes
@@ -53,7 +57,7 @@ testProj Change Log
 		// Fixed data pointer on inviting the alchemist
 		// Enacted minimum level of 200 for super hunting
 		// Enacted minimum level of 1000 for town management
-		// Enacted max hunt reptition of 1000
+		// Enacted max hunt repetition of 1000
 
 2022-08-03-1.2
 		// Working on correcting Max Stat cost and removing proper amount of exp

@@ -151,7 +151,7 @@ def guildProcess(repeat, level):
     rewardList = [25, 5, 1]
 
     #Initial checks to see if guild needs to run
-    if experienceStored <= (level * 1000):
+    if experienceStored <= (level * 1000) + (members * 100):
         if woodStored > 0 or oreStored > 0 or metalStored > 0:
 
             # Begin run
@@ -162,7 +162,7 @@ def guildProcess(repeat, level):
                 for resource, reward in zip(materialList, rewardList):
                     for body in range(1, members + 1):
                         if experienceStored <= (level * 1000):
-                            openSpace = (level * 1000) - experienceStored
+                            openSpace = ((level * 1000) + (members * 100)) - experienceStored
                             if resource == 0 or openSpace < reward:
                                 pass
                             else:
@@ -197,7 +197,6 @@ def guildUpgrade(coffer, population, levelGuild, itemWood, itemOre, itemMetal):
 
         # Check if yes and if resources are available
         if confirm.upper() == 'Y':
-            print(coffer, population, levelGuild, itemWood, itemOre, itemMetal)
             if coffer >= 25000000 and itemWood >= 120000 and itemOre >= 66000 and itemMetal >= 29000:
                 coffer -= 25000000
                 itemWood -= 120000
@@ -205,18 +204,17 @@ def guildUpgrade(coffer, population, levelGuild, itemWood, itemOre, itemMetal):
                 itemMetal -= 29000
                 levelGuild += 1
                 createGuild()
-                print(coffer, population, levelGuild, itemWood, itemOre, itemMetal)
                 return coffer, population, levelGuild, itemWood, itemOre, itemMetal
 
             else:
                 print(' Resources are missing.')
                 time.sleep(1)
-                return coffer, levelGuild, itemWood, itemOre, itemMetal
+                return coffer, population, levelGuild, itemWood, itemOre, itemMetal
 
         else:
             print(' Confirmation not received.')
             time.sleep(1)
-            return coffer, levelGuild, itemWood, itemOre, itemMetal
+            return coffer, population, levelGuild, itemWood, itemOre, itemMetal
 
     # Allows guild functions if guild is built
     else:

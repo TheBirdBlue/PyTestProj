@@ -278,18 +278,13 @@ def resourceCollection(repeat):
             resourceList.append(int(line))
 
     # Set names to list on load
-    itemWood = resourceList[0]
-    itemOre = resourceList[1]
-    itemMetal = resourceList[2]
     levelLumber = resourceList[3]
     levelMine = resourceList[4]
     levelSmith = resourceList[5]
     levelAlchemist = resourceList[6]
     levelForge = resourceList[7]
     levelGuild = resourceList[8]
-    coffer = resourceList[9]
     population = resourceList[10]
-    search = 1
 
     # Set list for loop and resources
     building = ['Lumber', 'Mine', 'Blacksmith']
@@ -299,20 +294,25 @@ def resourceCollection(repeat):
 
     # Begin resource gathering
     if levelLumber > 0 or levelMine > 0 or levelSmith > 0:
-        for stock, name in zip(buildingLoop, building):
-            moneySpent = 0
-            stockBase = stock
-            resource = 0
+        moneySpent = 0
 
-            # Check if building has been built and population to work
-            if stock > 0 and population > 0 and resourceList[9] >= 100:
-                for run in range(1, repeat + 1):
+        # Runs the number of times that a hunt was conducted
+        for run in range(1, repeat + 1):
 
-                    # Run chance per population
-                    if population > 0 and resourceList[9] >= 100:
-                        checkList = True
-                        for count in range(1, population + 1):
-                            if resourceList[9] >= 100:
+            # Run chance per population
+            if population > 0 and resourceList[9] >= 100:
+                checkList = True
+                for count in range(1, population + 1):
+                    buildingLoopLocation = 0
+                    if resourceList[9] >= 100:
+
+                        # Run through building per population
+                        for stock, name in zip(buildingLoop, building):
+                            resource = 0
+                            stockBase = stock
+
+                            # Checks that building has been built
+                            if stock > 0 and resourceList[9] >= 100:
 
                                 # Gain guaranteed resources
                                 stock = stockBase
@@ -325,20 +325,29 @@ def resourceCollection(repeat):
                                     resourceList[9] -= 100
                                     resource += 1
                                     moneySpent -= 100
+                                    resourceGains[buildingLoopLocation] += resource
+                                    buildingLoopLocation += 1
                                 else:
                                     resourceList[9] -= 10
                                     moneySpent -= 10
+                                    buildingLoopLocation += 1
 
+                            # Else for stock > 0 (Building not built)
                             else:
-                                pass
+                                buildingLoopLocation += 1
 
-                resourceGains[buildingLoopLocation] += resource
+                    # Else for resourceList[9] >= 100 (Running check)
+                    else:
+                        resourceGains[buildingLoopLocation] += 0
+                        buildingLoopLocation += 1
 
+            # Else for population > 0 and resourceList[9] >= 100 (Initial check)
             else:
-                resourceGains[buildingLoopLocation] += 0
+                pass
+
             buildingLoopLocation += 1
 
-            stats.addMoneyTransaction(moneySpent)
+        stats.addMoneyTransaction(moneySpent)
 
     formatted = []
     for value in resourceGains:
@@ -385,22 +394,9 @@ def sellResources(choice, woodVariable, oreVariable, metalVariable):
         for line in file:
             resourceList.append(int(line))
 
-    # Set names to list on load
-    itemWood = resourceList[0]
-    itemOre = resourceList[1]
-    itemMetal = resourceList[2]
-    levelLumber = resourceList[3]
-    levelMine = resourceList[4]
-    levelSmith = resourceList[5]
-    levelAlchemist = resourceList[6]
-    levelForge = resourceList[7]
-    levelGuild = resourceList[8]
-    coffer = resourceList[9]
-    population = resourceList[10]
-
     # Set series of variables
     infoPull = ['wood', 'ore', 'metal']
-    infoPrice = [10 + woodVariable, 500 + oreVariable, 1000 + metalVariable]
+    infoPrice = [10 + woodVariable, 100 + oreVariable, 250 + metalVariable]
     print(' You have ' + common.numConversion(resourceList[choice]) + ' ' + infoPull[choice] + ' that sells for '\
         + common.numConversion(infoPrice[choice]) + ' each.')
     sellNumber = input(' How many would you like to sell? ')
@@ -574,6 +570,8 @@ def townFunction(money):
         print(infoLineSix.format(' ', ' ', ' '))
         print(infoLineTwo.format(moneyFormat, cofferFormat, populationFormat))
         print(' ╠═══╦═══════════╩═══════╦═══╦═══╩═══════════════╡')
+
+        # Printing Choices
         for choiceL, choiceR in zip(lMenu, rMenu):
             if number == 9:
                 choiceLine = ' ╟(' + str(number) + ')╟ ' + '{:<18}' + '╟(0)╟ ' + '{:<18}' + '|'
